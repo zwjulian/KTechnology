@@ -83,10 +83,18 @@ class WebFrontend
 			}
 
 			if ($step instanceof AskedQuestion)
-			{
-				$page = new Template('templates/question.phtml');
-				$page->question = $step->question;
-				$page->skippable = $step->skippable;
+			{	
+				if ($step->open == true)
+				{
+					$page = new Template('templates/open_question.phtml');
+					$page->question = $step->question;
+					$page->skippable = $step->skippable;
+				} else
+				{
+					$page = new Template('templates/question.phtml');
+					$page->question = $step->question;
+					$page->skippable = $step->skippable;
+				}
 			}
 			else
 			{

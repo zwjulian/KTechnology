@@ -90,6 +90,8 @@ class AskedQuestion
 
 	public $skippable;
 
+	public bool $open = true;
+
 	public function __construct(Question $question, $skippable)
 	{
 		$this->question = $question;

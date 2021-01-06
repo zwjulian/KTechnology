@@ -1,0 +1,18 @@
+<?php $this->extends('layout.phtml') ?>
+
+<?php $this->begin('content') ?>
+<section class="question">
+	<p><?=$state->substitute_variables($question->description, ['Template', 'html'])?></p>
+
+	<ol class="options">
+		<li>
+			<label>
+				<input type="number" name="answer" value="<?=_encode($option->consequences)?>">
+				<?=$state->substitute_variables($option->description, ['Template', 'html'])?>
+			</label>
+		</li>
+	</ol>
+
+	<button type="submit">Continue…</button>
+</section>
+<?php $this->end() ?>
